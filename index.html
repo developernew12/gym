@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .home{
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)), url('./assets/pexels-binyaminmellish-116077.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .line-through{
+            text-decoration-color: red; 
+        }
+        .girl-img img{
+            width: 400px;
+            
+        }
+        .animate .zoom-in {
+              animation: zoomIn 5s;
+              transition: transform 0.5s ease-out;
+       }
+       @keyframes rotateanimation {
+    0% {
+        transform: perspective(1000px) rotateY(50deg);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(800px) rotateY(0);
+        opacity: 0.9;
+    }
+}
+
+.animate .rotate-animation {
+    animation: rotateanimation 2s;
+    overflow: hidden;
+    
+}
+        @keyframes zoomIn {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        }
+
+        @keyframes slideInFromRight {
+                   0% {
+                     transform: translateX(100%);
+                     opacity: 0;
+                   }
+                   100% {
+                     transform: translateX(0);
+                     opacity: 1;
+                   }
+               }
+
+               .animate .slide-in {
+                 animation: slideInFromRight 2s ease-out forwards;
+               }
+               #image-container img{
+                  min-width: 350px;
+                  width: 100px;
+               }
+               .slanted-content{
+                width: 50%;
+                background-color: orange;
+                height: 800px;
+               }
+               .slanted-background{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+               }
+    </style>
+</head>
+<body>
+    <nav class="absolute flex justify-between items-center min-w-full mt-4 px-4 sm:px-8">
+    <!-- Logo and title -->
+    <h1 class="ml-4 text-2xl text-white line-through uppercase">the november room</h1>
+
+    <!-- Hamburger icon for small screens -->
+    <div class="block sm:hidden">
+        <button id="mobile-menu-toggle" class="text-orange-500 hover:text-orange-300 focus:outline-none">
+            <i class="fas fa-bars fa-2x"></i>
+        </button>
+    </div>
+
+    <!-- Navigation links -->
+    <ul class="hidden sm:flex gap-4 mr-4 text-2xl cursor-pointer">
+        <li>
+            <i class="fab fa-linkedin text-orange-300"></i>
+        </li>
+        <li>
+            <i class="fab fa-facebook-f text-orange-300"></i>
+        </li>
+        <li>
+            <i class="fab fa-twitter text-orange-300"></i>
+        </li>
+    </ul>
+</nav>
+    <section class="flex flex-wrap flex-col justify-center text-center items-center home h-screen text-orange-500 ">
+        <div class="zoom-in">
+            <h1 class="text-white text-5xl ">Feel The <span class="text-orange-500">Power</span></h1>
+        <div class="flex justify-items-center w-3/6 mx-auto mt-4 mb-5">
+            <p>
+                Welcome to The November Room. We are a fitness and training center that focuses on pushing you to your absolute limit. Download our complete brochure to get started today!
+            </p>  
+        </div>
+        <button class="border-2 border-orange-500 w-40 text-blue-500 pb-1 hover:bg-orange-500 font-bold">Download Brochure</button>
+        </div>
+        
+       
+    </section>
+    <section id="About" class="flex flex-col md:flex-row gap-20 text-center justify-center min-w-full bg-slate-950 capitalize px-4 sm:px-8 py-10 md:py-20 ">
+        <div class="girl-img flex justify-center md:justify-start">
+            <img src="./assets/pexels-photo-348489.jpeg" alt="" class="rounded-lg">
+        </div>
+        <div class="flex flex-col justify-center text-white max-w-prose">
+            <h1 class="text-4xl md:text-5xl mb-4">About our <span class="text-orange-500">gym</span></h1>
+            <p class="text-lg md:text-xl mb-6">SAFE BODY BUILDING</p>
+            <p class="text-lg md:text-xl mb-6">The November Room is dedicated to providing you with the latest gym equipment and quality foam floor padding, along with three professional trainers.</p>
+            <ul class="text-lg md:text-xl grid grid-cols-1 md:grid-cols-3 gap-4">
+                <li class="flex items-center gap-2">
+                    <i class="fas fa-dumbbell text-5xl text-orange-500"></i>
+                    <span class="ml-2">Latest & greatest gym equipment</span>
+                </li>
+                <li class="flex items-center gap-2">
+                    <i class="fas fa-fire text-5xl text-orange-500"></i>
+                    <span class="ml-2">5-inch quality foam floor padding</span>
+                </li>
+                <li class="flex items-center gap-2">
+                    <i class="fas fa-person text-5xl text-orange-500"></i>
+                    <span class="ml-2">3 professional trainers</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="trainer-container flex justify-center items-center min-w-full h-screen flex-col  mx-0 p-0 overflow-hidden">
+        <div class="trainer-head flex text-center flex-col mb-36">
+            <h1 class="text-3xl mb-3">MEET OUR TRAINERS</h1>
+            <p class="text-center">Our trainers are are here to dedicate the time and effort that you need to get in the best shape of your life</p>
+          </div>
+      <div id="image-container" class="flex gap-20 overflow-hidden">
+        <div class="imageitems text-center rotate-animation"><img src="./assets/11.webp" alt=""><h2>Strawberry Shortcake</h2><p>CUPCAKE SMASHER</p></div>
+        <div class="imageitems text-center rotate-animation"><img src="./assets/22.jpeg" alt=""><h2>Strawberry Shortcake</h2><p>CUPCAKE SMASHER</p></div>
+        <div class="imageitems text-center rotate-animation"><img src="./assets/33.jpeg" alt=""><h2>Strawberry Shortcake</h2><p>CUPCAKE SMASHER</p></div>
+      </div>
+    </section>
+        <section class="slanted-background  py-20 h-screen bg-black ">
+                <div class="slanted-content flex flex-col items-center justify-center rounded-lg">
+                 <h1 class="text-4xl font-bold mb-4">CONTACT US</h1>
+                 <p class="mb-8">Contact us to ask any questions, acquire membership, talk to our trainers, or anything else</p>
+                    <div class="contact-form w-full max-w-md">
+                        <h2 class="text-2xl font-bold mb-4">Want to work with us?</h2>
+                        <p class="mb-4">Complete this form and we will get back to you in 24 hours.</p>
+                        <form>
+                        <div class="mb-4">
+                            <label class="block mb-2" for="name">Full Name</label>
+                            <input class="w-full p-2 border border-gray-300 rounded" type="text" id="name" placeholder="Full Name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2" for="email">Email</label>
+                            <input class="w-full p-2 border border-gray-300 rounded" type="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-4" for="message">Message</label>
+                            <textarea class="w-full h-36 p-2 border border-gray-300 rounded" id="message" placeholder="Type a message..."></textarea>
+                        </div>
+                        <button class="w-full bg-black mt-5 text-white py-2 rounded hover:bg-gray-700" type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+        </section>
+        <hr class="border-1 border-gray-300">
+        <footer class="m mb-4 px-4 sm:px-0 bg-slate-200">
+            <div class="ml-4 sm:ml-56 mt-5 flex flex-col">
+                <div>
+                    <h1 class="text-3xl">Follow us on Social Media</h1>
+                    <p>Find us on any of these platforms, we respond 1-2 business days.</p>
+                </div>
+                <div class="mt-5 flex gap-10 text-3xl">
+                    <div class="shadow-lg rounded-full p-2">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="shadow-lg rounded-full p-2">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="shadow-lg rounded-full p-2">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="shadow-lg rounded-full p-2">
+                        <i class="fab fa-twitch"></i>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-1 border-gray-300 my-4">
+            <p class="text-center text-gray-600">&copy; 2024 THE NOVEMBER ROOM</p>
+        </footer>
+    
+
+    <script src="https://kit.fontawesome.com/be3a83d02a.js" crossorigin="anonymous"></script>
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        const options = {
+            threshold: 0.5 
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                } else {
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
